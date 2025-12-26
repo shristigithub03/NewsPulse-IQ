@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "newsiq-backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "newsiq-frontend/package.json",
+      "use": "@vercel/angular",
+      "config": {
+        "distDir": "dist/newsiq-frontend"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/newsiq-backend/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/newsiq-frontend/$1"
+    }
+  ]
+}
