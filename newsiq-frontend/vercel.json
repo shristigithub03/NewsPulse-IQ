@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/newsiq-frontend",
+  "framework": "angular"
+}
